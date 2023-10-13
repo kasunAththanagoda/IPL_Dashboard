@@ -1,6 +1,7 @@
 import "./App.css";
 import MatchPage from "./pages/MatchPage";
 import TeamPage from "./pages/TeamPage";
+import HomePage from "./pages/HomePage";
 // import {BrowserRouter  as Router} from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -21,6 +22,8 @@ function App() {
             element={<MatchPage />}
           />
           <Route path="/teams/:teamName" element={<TeamPage />} />
+          <Route exact path="/" element={<HomePage />} />
+        
         </Routes>
       </Router>
     </div>
