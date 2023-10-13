@@ -1,4 +1,4 @@
-const MatchDetailCard = ({match}) => {
+const MatchDetailCard = ({match,teamName}) => {
     return ( 
         <div className="MatchDetailCard">
             <h3>Latest Matches</h3>
