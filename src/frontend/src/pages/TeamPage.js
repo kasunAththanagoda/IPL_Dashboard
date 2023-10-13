@@ -1,5 +1,5 @@
 import { useEffect,useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import { PieChart } from 'react-minimal-pie-chart';
 
 import './TeamPage.scss';
@@ -49,7 +49,7 @@ const TeamPage = () => {
             {team.matches.slice(1).map((match)=> <MatchSmallCard key={match.id} teamName={team.teamName} match={match}></MatchSmallCard>)}
 
             <div className="more-link">
-                <a href="asdas">More> </a>
+            <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}>More ></Link>
             </div>
         </div>
      );
