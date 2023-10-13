@@ -4,9 +4,6 @@ import com.cricket.IPLdashboard.model.Match;
 import com.cricket.IPLdashboard.model.Team;
 import com.cricket.IPLdashboard.repository.MatchRepository;
 import com.cricket.IPLdashboard.repository.TeamRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.print.Pageable;
@@ -45,6 +42,11 @@ public class TeamController {
                 startDate,
                 endDate
         );
+    }
+
+    @GetMapping("/team")
+    public Iterable<Team> getAllTeam() {
+        return this.teamRepository.findAll();
     }
 
     
