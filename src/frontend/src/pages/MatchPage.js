@@ -1,5 +1,5 @@
 import { useEffect,useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams,Link} from 'react-router-dom';
  import  YearSelector  from '../components/YearSelector';
 
 import MatchDetailCard from "../components/MatchDetailCard";
@@ -23,6 +23,8 @@ const MatchPage = () => {
 
    
     return (
+        <div >
+           <h3 className="home-button"><Link to={'/'} style={{ color: '#25CCF7' }}> {'<< '}Home  </Link></h3>
         <div className="MatchPage">
             <div className="year-selector">
                 <h3> Select Year </h3>
@@ -36,6 +38,7 @@ const MatchPage = () => {
                 }
             </div>
 
+        </div>
         </div>
     );
 }

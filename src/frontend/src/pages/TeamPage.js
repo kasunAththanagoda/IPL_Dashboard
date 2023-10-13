@@ -29,7 +29,10 @@ const TeamPage = () => {
         return <h1>Team Not Found</h1>;
     }
     return ( 
+        <div >
+           <h3 className="home-button"><Link to={'/'} style={{ color: '#25CCF7' }}> {'<< '}Home  </Link></h3>
         <div className="TeamPage">
+            
             <div className="team-name-section">
             <h1 className="team-name">{team.teamName}</h1>
             </div>
@@ -49,8 +52,9 @@ const TeamPage = () => {
             {team.matches.slice(1).map((match)=> <MatchSmallCard key={match.id} teamName={team.teamName} match={match}></MatchSmallCard>)}
 
             <div className="more-link">
-            <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}>More ></Link>
+            <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}>More {'>'}</Link>
             </div>
+        </div>
         </div>
      );
 }
