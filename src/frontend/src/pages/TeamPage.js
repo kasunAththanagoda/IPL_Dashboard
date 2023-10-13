@@ -1,6 +1,8 @@
 import { useEffect,useState } from "react";
 import { useParams } from 'react-router-dom';
 
+import './TeamPage.scss';
+
 import MatchDetailCard from "../components/MatchDetailCard";
 import MatchSmallCard from "../components/MatchSmallCard";
 
@@ -27,10 +29,19 @@ const TeamPage = () => {
     }
     return ( 
         <div className="TeamPage">
-            <h1>{team.teamName}</h1>
+            <div className="team-name-section">
+            <h1 className="team-name">{team.teamName}</h1>
+            </div>
+            <div className="win-loss-section">Wins / Losses</div>
+            <div className="match-detail-section">
+            <h3>Latest Matches</h3>
             <MatchDetailCard teamName={team.teamName} match={team.matches[0]}></MatchDetailCard>
+            </div>
             {team.matches.slice(1).map((match)=> <MatchSmallCard key={match.id} teamName={team.teamName} match={match}></MatchSmallCard>)}
 
+            <div className="more-link">
+                <a href="asdas">More> </a>
+            </div>
         </div>
      );
 }
