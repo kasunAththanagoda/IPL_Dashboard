@@ -16,7 +16,7 @@ const TeamPage = () => {
         ()=>{
             if(teamName){console.log("team : ",teamName);
             const fetchMatches=async ()=>{
-                const response=await fetch(`http://localhost:8080/team/${teamName}`);
+                const response=await fetch(`${process.env.REACT_APP_API_ROOT_URL}/team/${teamName}`);
                 const data= await response.json();
                 console.log("fetched data : ",data);
                 setTeam(data);           
